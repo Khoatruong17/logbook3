@@ -1,10 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <Text style={styles.title}>Welcome to the Game!</Text>
+      <TouchableOpacity style={styles.button} onPress={() => alert('Game Started!')}>
+        <Text style={styles.buttonText}>Sign up</Text>
+        <Text style={styles.buttonText}>Log in</Text>
+      </TouchableOpacity>
+      
       <StatusBar style="auto" />
     </View>
   );
@@ -13,8 +18,24 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#282c34',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#fff',
+    marginBottom: 20,
+  },
+  button: {
+    backgroundColor: '#61dafb',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 10,
+  },
+  buttonText: {
+    fontSize: 18,
+    color: '#000',
   },
 });
